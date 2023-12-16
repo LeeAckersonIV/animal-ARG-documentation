@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Animal-ARG</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Animal-ARG
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basic-information">Basic Information</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#this-analytical-framework-is-discussed-extensively-here">This analytical framework is discussed extensively here:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#workflow-methodology">Workflow Methodology</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#methodology">Methodology</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-quality-control-pre-processing">1.  Quality Control + Pre-Processing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-download-reference-gene-databases">2.  Download Reference Gene Databases</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-prepare-reference-gene-catalog">3. Prepare Reference Gene Catalog</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4a-antimicrobial-resistance-gene-mapping">4a.  Antimicrobial Resistance Gene Mapping</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4b-16s-rrna-gene-mapping">4b.  16s rRNA Gene Mapping</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5a-antimicrobial-resistance-gene-quantification">5a.  Antimicrobial Resistance Gene Quantification</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5b-16s-rrna-gene-quantification">5b.  16s rRNA Gene Quantification</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-clone-the-animalarg-github-repository">1.) Clone the animalARG GitHub Repository</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-hpcc-environment-set-up">2.)   HPCC Environment Set-Up</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-prepare-default-reference-databases">3.) Prepare Default Reference Databases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-perform-main-animalarg-analysis">4.) Perform Main AnimalARG Analysis</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nextflow-parameterization">Nextflow Parameterization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#startnf">start.nf</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mainnf">main.nf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mkdocs-project-layout">MkDocs Project Layout</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="tutorial/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference/">Reference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="explain/">Explanation</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Animal-ARG</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="animal-arg-documentation">Animal-ARG Documentation</h1>
+<h2 id="basic-information">Basic Information</h2>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Animal-ARG is a nextflow pipeline for estimating Antimicrobial Resistance Gene (ARG) abundance in metagenomic samples. Primarily samples of animal agriculture origin such as Bovine, Swine, Ovine, and Poultry, that have been sequenced via shotgun metagenomics. Animal-ARG can utilze local genomic data, or pull genomic sequence data directly from the NCBI SRA for analysis.</p>
+<h6 id="this-analytical-framework-is-discussed-extensively-here">This analytical framework is discussed extensively here:</h6>
+<pre><code>Ackerson,Leland K.,,IV. Analytical Framework for Estimating Antimicrobial Resistance Gene Abundance in Metagenomic Samples  
+    of Animal Agriculture Origin, Michigan State University, United States -- Michigan, 2023. ProQuest
+</code></pre>
+<p></br>
+</br></p>
+<h2 id="workflow-methodology">Workflow Methodology</h2>
+<p><img alt="DataFlowDiagram" src="DataFlowDiagram.png" /></p>
+<h3 id="methodology">Methodology</h3>
+<h4 id="1-quality-control-pre-processing">1.  Quality Control + Pre-Processing</h4>
+<ul>
+<li>FastQC is performed on both the raw reads and post-processing clean reads.  </li>
+<li>Results from quality control analysis are deposited in the 'QCmetrics' folder upon completion of the workflow proccesses.  </li>
+<li>Adapter trimming and read quality filtering are performed using BBDuk (BBTools).</li>
+</ul>
+<h4 id="2-download-reference-gene-databases">2.  Download Reference Gene Databases</h4>
+<ul>
+<li>ARG Reference: The Comprehensive Antibiotic Resistance Database (CARD)  </li>
+<li>16S rRNA Reference: GreenGenes Database </li>
+</ul>
+<h4 id="3-prepare-reference-gene-catalog">3. Prepare Reference Gene Catalog</h4>
+<ul>
+<li>CD-HIT-EST is utilized to cluster each reference database and remove redundancy.  </li>
+<li>Clustered references are indexed (BWA INDEX) prior to subsequent alignment.</li>
+</ul>
+<h4 id="4a-antimicrobial-resistance-gene-mapping">4a.  Antimicrobial Resistance Gene Mapping</h4>
+<ul>
+<li>Reference Database: The Comprehensive Antibiotic Resistance Database (CARD).  </li>
+<li>Alignement Software: BWA MEM</li>
+</ul>
+<h4 id="4b-16s-rrna-gene-mapping">4b.  16s rRNA Gene Mapping</h4>
+<ul>
+<li>Necessary for metagenome taxonomical quantification, and downstream normalization.  </li>
+<li>Reference Database: GreenGenes Database  </li>
+<li>Alignement Software: BWA MEM</li>
+</ul>
+<h4 id="5a-antimicrobial-resistance-gene-quantification">5a.  Antimicrobial Resistance Gene Quantification</h4>
+<ul>
+<li>Estimate absolute abundance of ARGs</li>
+<li>Read mappings for each reference gene are summed</li>
+</ul>
+<h4 id="5b-16s-rrna-gene-quantification">5b.  16s rRNA Gene Quantification</h4>
+<ul>
+<li>Estimate absolute abundance of 16s rRNA Genes</li>
+<li>Read mappings for each reference gene are summed
+</br>
+</br></li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>This workflow's source code is available on GitHub: <a href="https://github.com/LeeAckersonIV/CMSE890-602_FinalProject">animalARG</a></p>
+<h6 id="1-clone-the-animalarg-github-repository">1.) Clone the animalARG GitHub Repository</h6>
+<pre><code>   $ git clone https://github.com/LeeAckersonIV/CMSE890-602_FinalProject.git
+   $ cd CMSE890-602_FinalProject/
+</code></pre>
+<p></br></p>
+<h6 id="2-hpcc-environment-set-up">2.)   HPCC Environment Set-Up</h6>
+<pre><code>   $ module load fastQC
+   $ module load BWA/0.7.17  
+   $ module load nextflow
+   $ module load SAMtools
+   $ module load BEDtools
+   $ module load GCC/6.4.0-2.28  
+   $ module load OpenMPI/2.1.1
+</code></pre>
+<p></br></p>
+<h6 id="3-prepare-default-reference-databases">3.) Prepare Default Reference Databases</h6>
+<pre><code>   $ nextflow run start.nf      # execute start.nf script
+
+   N E X T F L O W  ~  version 22.10.6
+   Launching `start.nf` [random_name] DSL2 - revision: [hashkey]
+          Download Defaults   
+   ===============================
+   SRA IDs      : None Identified by User
+   ARG Database : https://card.mcmaster.ca/download/0/broadstreet-v3.2.2.tar.bz2
+   16S Database : https://gg-sg-web.s3-us-west-2.amazonaws.com/downloads/greengenes_database/gg_12_10/gg_12_10.fasta.gz
+</code></pre>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; To download data from NCBI SRA, indicate the SRA ID upon start.nf execution.<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This can be accomplished through the SRA_IDs parameter like so:</p>
+<pre><code>   $ nextflow run start.nf --SRA_IDs 'SRS6485642'   # execute start.nf, donwload SRA data
+
+   N E X T F L O W  ~  version 22.10.6
+   Launching `start.nf` [random_name] DSL2 - revision: [hashkey]
+          Download Defaults   
+   ===============================
+   SRA IDs      : SRS6485642
+   ARG Database : https://card.mcmaster.ca/download/0/broadstreet-v3.2.2.tar.bz2
+   16S Database : https://gg-sg-web.s3-us-west-2.amazonaws.com/downloads/greengenes_database/gg_12_10/gg_12_10.fasta.gz
+</code></pre>
+<p></br></p>
+<h6 id="4-perform-main-animalarg-analysis">4.) Perform Main AnimalARG Analysis</h6>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; At this point, users are able to execute the main nextflow pipeline. Set-Up (start.nf) need only<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; be carried out once, and then the primary workflow can be continuously utilized (main.nf).</p>
+<pre><code>   $ nextflow run main.nf   # execute main.nf
+
+   N E X T F L O W  ~  version 22.10.6
+   Launching `main.nf` [random_name] DSL2 - revision: [hashkey]
+        A N I M A L  -  A R G     
+   ===============================
+   SRA IDs      : USER_Defined_List
+   Reads        : /your/path/CMSE890-602_FinalProject/data/reads/*_{1,2}.fastq.gz
+   ARG Database : /your/path/CMSE890-602_FinalProject/data/DB/CARD_NR.99.fasta
+   16S Database : /your/path/CMSE890-602_FinalProject/data/DB/greenGenes_NR.99.fasta.gz
+   QC Analysis  : /your/path/CMSE890-602_FinalProject/QCmetrics
+   Results      : /your/path/CMSE890-602_FinalProject/results
+</code></pre>
+<p></br>
+</br></p>
+<h2 id="nextflow-parameterization">Nextflow Parameterization</h2>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The following parameters accompany either the start.nf or main.nf script, and allow the user to adjust and or introduce various options they wish to include in the analysis performed by the nextflow pipeline. These can be altered via the command line interface (CLI) when exeuting nextflow by adding '--parameter "option" to the fundamental 'nextflow run {script}' command.<br />
+</br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Example 1. Indicate an SRA ID you wish to download:</p>
+<pre><code>   $ nextflow run start.nf --SRA_IDs 'SRS6485642'
+</code></pre>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Example 2. Indicate where local reads you wish to analyze are stored:</p>
+<pre><code>   $ nextflow run main.nf --readsDir /somewhere/else/than/default/directory/
+</code></pre>
+<h3 id="startnf">start.nf</h3>
+<ul>
+<li><code>params.SRA_IDs</code> - Used to download genomic data from the SRA, simply indicate the SRA ID</li>
+<li><code>params.ARG_db</code> - Name of ARG reference file<ul>
+<li>
+<ul>
+<li>Default = 'ARG_referenceDB.fasta'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.ARG_db_URL</code> - Link to website of the ARG database you wish to use<ul>
+<li>
+<ul>
+<li>Default = URL for downloading CARD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.ARG_db_NR</code> - Name of NonRedundant (NR) ARG reference file after clustering<ul>
+<li>
+<ul>
+<li>Default = 'ARG_referenceDB_NR99.fasta'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.rRNA16S_db</code> - Name of 16S rRNA reference file<ul>
+<li>
+<ul>
+<li>Default = '16SrRNA_referenceDB.fasta.gz'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.rRNA16S_db_URL</code> - Link to website of the 16S rRNA database you wish to use<ul>
+<li>
+<ul>
+<li>Default = URL for downloading GreenGenes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.rRNA16S_db_NR</code> - Name of NonRedundant (NR) 16S rRNA reference file after clustering<ul>
+<li>
+<ul>
+<li>Default = '16SrRNA_referenceDB_NR99.fasta.gz'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.DBdir</code> - Directory where you wish to house the downloaded and processed databases<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/DB/'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.readsDir</code> - Directory that stores downloaded SRA reads, or location of local reads<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/reads/'
+</br></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mainnf">main.nf</h3>
+<ul>
+<li><code>params.SRA_IDs</code> - Used to download genomic data from the SRA, simply indicate the SRA ID</li>
+<li><code>params.CARD_db</code> - Name and location of NonRedundant ARG reference file<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/DB/ARG_referenceDB_NR99.fasta'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.GG_db</code> - Name of location of NonRedundant 16S rRNA reference file<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/DB/16SrRNA_referenceDB.fasta.gz'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.reads</code> - Location of genomic reads that will be analyzed<ul>
+<li>
+<ul>
+<li>Default = $baseDir/data/reads/*_{1,2}.fastq.gz; Note: Pipeline assumes reads are paired</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.readsDir</code> - Directory that stores downloaded SRA reads, or location of local reads<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/reads/'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.outdir</code> - Directory where you wish to house the produced results (ARG Abundances)<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/results'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.QC_files</code> - Directory where you wish to house the FASTQC results<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/QCmetrics'</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>params.clean_reads</code> - Directory where trimmed and quality controlled reads are stored<ul>
+<li>
+<ul>
+<li>Default = '$baseDir/data/cleanReads/'
+</br>
+</br></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="mkdocs-project-layout">MkDocs Project Layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md        # The documentation homepage.
+    tutorial.md     # Animal-ARG Tutorial
+    reference.md    # Animal-ARG References
+    explain.md      # Animal-ARG Explanation
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="tutorial/" class="btn btn-neutral float-right" title="Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="tutorial/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2023-12-16 02:33:49.792847+00:00
+-->
